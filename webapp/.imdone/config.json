@@ -1,0 +1,73 @@
+{
+  "exclude": [
+    "^(node_modules|bower_components|\\.imdone|target|build|dist|logs)[\\/\\\\]?|\\.(git|svn|hg|npmignore)|\\~$|\\.(jpg|png|gif|swp|ttf|otf)$"
+  ],
+  "watcher": true,
+  "keepEmptyPriority": false,
+  "code": {
+    "include_lists": [
+      "TODO",
+      "DOING",
+      "DONE",
+      "PLANNING",
+      "FIXME",
+      "ARCHIVE",
+      "HACK",
+      "CHANGED",
+      "XXX",
+      "IDEA",
+      "NOTE",
+      "REVIEW"
+    ]
+  },
+  "lists": [
+    {
+      "name": "SWAGGER_STUFF",
+      "hidden": true
+    },
+    {
+      "name": "NOTE",
+      "hidden": true
+    },
+    {
+      "name": "FIXME",
+      "hidden": true
+    },
+    {
+      "name": "XXX",
+      "hidden": true
+    },
+    {
+      "name": "675",
+      "hidden": true
+    },
+    {
+      "name": "876",
+      "hidden": true
+    },
+    {
+      "name": "TODO",
+      "hidden": true
+    },
+    {
+      "name": "TO-DO",
+      "hidden": false
+    },
+    {
+      "name": "DOING",
+      "hidden": false
+    },
+    {
+      "name": "DONE",
+      "hidden": false
+    }
+  ],
+  "marked": {
+    "gfm": true,
+    "tables": true,
+    "breaks": false,
+    "pedantic": false,
+    "smartLists": true,
+    "langPrefix": "language-"
+  }
+}

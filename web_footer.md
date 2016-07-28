@@ -1,0 +1,6 @@
+[next to our logo] Mememoji is an interactive emotion recognition system that detects emotions based on facial expressions. The core of the app is a deep convolutional neural network that predicts the compositions of the emotions expressed by users. We hope you enjoy the special features we designed and give feedback to help us further train the algorithm. For the technology used behind the application, please visit: github.com/JostineHo/Mememoji.
+
+
+[next to Galvanize] Galvanize gives you the tools, techniques, and fundamental concepts needed to make an impact as a data scientist. In just 12 weeks, you'll apply problem-solving and creative thinking to real-world data sets, gaining experience across the data science stack: data munging, exploration, modeling, validation, visualization, and communication.                                 						             
+
+[my short intro] Jostine is a data scientist who loves building intelligent applications and exploring the exciting possibilities of true AI. She is interested in computer vision and automation that create innovative solutions to real-world problems. She holds a masters degree in Petroleum & Geosystems Engineering at The University of Texas at Austin.

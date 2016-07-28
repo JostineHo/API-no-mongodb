@@ -1,0 +1,11 @@
+#TO-DO: MEMESLAP!
+  -assign scores to meme faces
+  -randomize memeslap
+
+#TO-DO: README.md
+  -net architecture schematic
+  -
+
+#TO-DO: AWS VPC
+  -mongoDB feedback loop
+  -setup VPC

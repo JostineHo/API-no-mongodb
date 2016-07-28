@@ -1,0 +1,78 @@
+ubuntu@ip-172-31-59-174:~/faceinfo/webapp$ python run_debug.py
+Using Theano backend.
+WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+Using Theano backend.
+WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.
+ * Debugger is active!
+ * Debugger pin code: 149-139-059
+ERROR (theano.gof.opt): Optimization failure due to: local_abstractconv_check
+ERROR (theano.gof.opt): node: AbstractConv2d{border_mode='half', subsample=(1, 1), filter_flip=True, imshp=(None, None, None, None), kshp=(32, 1, 3, 3)}(convolution2d_input_1, convolution2d_10_W)
+ERROR (theano.gof.opt): TRACEBACK:
+ERROR (theano.gof.opt): Traceback (most recent call last):
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/theano/gof/opt.py", line 1772, in process_node
+    replacements = lopt.transform(node)
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/theano/tensor/nnet/opt.py", line 402, in local_abstractconv_check
+    node.op.__class__.__name__)
+AssertionError: AbstractConv2d Theano optimization failed: there is no implementation available supporting the requested options. Did you exclude both "conv_dnn" and "conv_gemm" from the optimizer? If on GPU, is cuDNN available and does the GPU support it? If on CPU, do you have a ei?
+
+66.68.32.65 - - [20/Jul/2016 04:58:39] "POST /v1.0.0/predict?annotate_image=true&crop_image=true HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/faceinfo/webapp/v100.py", line 249, in predict
+    annotated_rgb, crop_faces)
+  File "/home/ubuntu/faceinfo/webapp/v100.py", line 75, in build_PhotoInfo
+    angry, fear, happy, sad, surprise, neutral = predict_emotion(face_image_gray, index)
+  File "/home/ubuntu/faceinfo/webapp/v100.py", line 46, in predict_emotion
+    list_of_list = model.predict(image, batch_size=1, verbose=1)
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/keras/models.py", line 480, in predict
+    return self.model.predict(x, batch_size=batch_size, verbose=verbose)
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/keras/engine/training.py", line 1178, in predict
+    self._make_predict_function()
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/keras/engine/training.py", line 736, in _make_predict_function
+    **kwargs)
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/keras/backend/theano_backend.py", line 572, in function
+    return Function(inputs, outputs, updates=updates, **kwargs)
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/keras/backend/theano_backend.py", line 558, in __init__
+    **kwargs)
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/theano/compile/function.py", line 320, in function
+    output_keys=output_keys)
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/theano/compile/pfunc.py", line 479, in pfunc
+    output_keys=output_keys)
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/theano/compile/function_module.py", line 1776, in orig_function
+    output_keys=output_keys).create(
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/theano/compile/function_module.py", line 1456, in __init__
+    optimizer_profile = optimizer(fgraph)
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/theano/gof/opt.py", line 101, in __call__
+    return self.optimize(fgraph)
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/theano/gof/opt.py", line 89, in optimize
+    ret = self.apply(fgraph, *args, **kwargs)
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/theano/gof/opt.py", line 230, in apply
+    sub_prof = optimizer.optimize(fgraph)
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/theano/gof/opt.py", line 89, in optimize
+    ret = self.apply(fgraph, *args, **kwargs)
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/theano/gof/opt.py", line 1879, in apply
+    nb += self.process_node(fgraph, node)
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/theano/gof/opt.py", line 1777, in process_node
+    lopt, node)
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/theano/gof/opt.py", line 1673, in warn_inplace
+    return NavigatorOptimizer.warn(exc, nav, repl_pairs, local_opt, node)
+  File "/home/ubuntu/anaconda2/lib/python2.7/site-packages/theano/gof/opt.py", line 1659, in warn
+    raise exc
+AssertionError: AbstractConv2d Theano optimization failed: there is no implementation available supporting the requested options. Did you exclude both "conv_dnn" and "conv_gemm" from the optimizer? If on GPU, is cuDNN available and does the GPU support it? If on CPU, do you have a BLAS library installed Theano can link against?
